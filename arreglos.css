@@ -71,6 +71,16 @@ button:hover {
     background: #166534;
 }
 
+.btn-moverTodo {
+    background: #2563eb;
+    display: block;
+    margin: 10px auto;
+}
+
+.btn-moverTodo:hover {
+    background: #1e40af;
+}
+
 .tablas {
     display: flex;
     gap: 25px;

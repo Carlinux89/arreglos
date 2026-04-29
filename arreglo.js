@@ -7,6 +7,7 @@ function agregarEdad() {
         edadesIzquierdo.push(edad);
         pintarArregloIzquierda();
         //pintarArregloDerecha();
+        document.getElementById("edad").value = "";
     } else {
         alert("⚠️ Ingrese un número valido!");
     }
@@ -34,6 +35,28 @@ function moverHaciaIzquierda(indice) {
     let valorEdad = edadesDerecho[indice]; //obtener valor edad
     edadesIzquierdo.push(valorEdad); //agregar valor edad
     edadesDerecho.splice(indice, 1); // eliminar valor edad
+    pintarArregloIzquierda();
+    pintarArregloDerecha();
+}
+
+function moverTodoHaciaDerecha() {
+    let valorEdad;
+    for (let i = 0; i < edadesIzquierdo.length; i++) {
+        valorEdad = edadesIzquierdo[i]; //obtener valor edad
+        edadesDerecho.push(valorEdad); //agregar valor edad
+    }
+    edadesIzquierdo = []; //limpiar arreglo izquierdo
+    pintarArregloIzquierda();
+    pintarArregloDerecha();
+}
+
+function moverTodoHaciaIzquierda() {
+    let valorEdad;
+    for (let i = 0; i < edadesDerecho.length; i++) {
+        valorEdad = edadesDerecho[i]; //obtener valor edad
+        edadesIzquierdo.push(valorEdad); //agregar valor edad
+    }
+    edadesDerecho = []; //limpiar arreglo derecho
     pintarArregloIzquierda();
     pintarArregloDerecha();
 }
@@ -70,3 +93,4 @@ function pintarArregloDerecha() {
     }
     tbody.innerHTML = contenidoTabla;
 }
+
